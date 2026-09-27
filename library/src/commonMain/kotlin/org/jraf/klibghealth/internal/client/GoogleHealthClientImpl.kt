@@ -83,7 +83,7 @@ internal class GoogleHealthClientImpl(
       }
       engine {
         // Set up a proxy if requested
-        configuration.http.httpProxy?.let { httpProxy ->
+        configuration.http.proxy?.let { httpProxy ->
           proxy = ProxyBuilder.http(
             URLBuilder().apply {
               host = httpProxy.host
@@ -123,7 +123,7 @@ internal class GoogleHealthClientImpl(
       }
 
       // Setup logging if requested
-      if (configuration.http.loggingLevel != Configuration.Http.HttpLoggingLevel.NONE) {
+      if (configuration.http.loggingLevel != Configuration.Http.LoggingLevel.NONE) {
         install(Logging) {
           logger = object : Logger {
             override fun log(message: String) {
@@ -131,11 +131,11 @@ internal class GoogleHealthClientImpl(
             }
           }
           level = when (configuration.http.loggingLevel) {
-            Configuration.Http.HttpLoggingLevel.NONE -> LogLevel.NONE
-            Configuration.Http.HttpLoggingLevel.INFO -> LogLevel.INFO
-            Configuration.Http.HttpLoggingLevel.HEADERS -> LogLevel.HEADERS
-            Configuration.Http.HttpLoggingLevel.BODY -> LogLevel.BODY
-            Configuration.Http.HttpLoggingLevel.ALL -> LogLevel.ALL
+            Configuration.Http.LoggingLevel.NONE -> LogLevel.NONE
+            Configuration.Http.LoggingLevel.INFO -> LogLevel.INFO
+            Configuration.Http.LoggingLevel.HEADERS -> LogLevel.HEADERS
+            Configuration.Http.LoggingLevel.BODY -> LogLevel.BODY
+            Configuration.Http.LoggingLevel.ALL -> LogLevel.ALL
           }
         }
       }

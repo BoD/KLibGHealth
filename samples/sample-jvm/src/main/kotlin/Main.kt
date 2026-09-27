@@ -48,7 +48,7 @@ suspend fun main(av: Array<String>) {
         ),
       ),
       GoogleHealthClient.Configuration.Http(
-        loggingLevel = GoogleHealthClient.Configuration.Http.HttpLoggingLevel.ALL,
+        loggingLevel = GoogleHealthClient.Configuration.Http.LoggingLevel.ALL,
       ),
     ),
   ) { newOAuthTokens ->
