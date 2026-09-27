@@ -3,22 +3,22 @@
   <groupId>org.jraf.klibghealth</groupId>
   <artifactId>kdoc</artifactId>
   <versioning>
-    <lastUpdated>20260927135119</lastUpdated>
+    <lastUpdated>20260927140324</lastUpdated>
     <snapshot>
-      <timestamp>20260927.135119</timestamp>
+      <timestamp>20260927.140324</timestamp>
       <buildNumber>1</buildNumber>
     </snapshot>
     <snapshotVersions>
       <snapshotVersion>
         <classifier>javadoc</classifier>
         <extension>jar</extension>
-        <value>1.1.1-20260927.135119-1</value>
-        <updated>20260927135119</updated>
+        <value>1.1.1-20260927.140324-1</value>
+        <updated>20260927140324</updated>
       </snapshotVersion>
       <snapshotVersion>
         <extension>pom</extension>
-        <value>1.1.1-20260927.135119-1</value>
-        <updated>20260927135119</updated>
+        <value>1.1.1-20260927.140324-1</value>
+        <updated>20260927140324</updated>
       </snapshotVersion>
     </snapshotVersions>
   </versioning>
