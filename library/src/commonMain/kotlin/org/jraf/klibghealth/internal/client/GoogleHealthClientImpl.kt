@@ -59,7 +59,7 @@ import kotlin.time.ExperimentalTime
 import kotlin.time.Instant
 
 internal class GoogleHealthClientImpl(
-  private var clientConfiguration: Configuration,
+  private var configuration: Configuration,
   private val onOAuthTokensRenewed: suspend (newOAuthTokens: Configuration.Auth.OAuthTokens) -> Unit,
 ) : GoogleHealthClient {
   private val service: GoogleHealthService by lazy {
@@ -83,7 +83,7 @@ internal class GoogleHealthClientImpl(
       }
       engine {
         // Set up a proxy if requested
-        clientConfiguration.http.httpProxy?.let { httpProxy ->
+        configuration.http.httpProxy?.let { httpProxy ->
           proxy = ProxyBuilder.http(
             URLBuilder().apply {
               host = httpProxy.host
@@ -95,7 +95,7 @@ internal class GoogleHealthClientImpl(
       install(Auth) {
         bearer {
           loadTokens {
-            clientConfiguration.auth.oAuthTokens?.let { oAuthTokens ->
+            configuration.auth.oAuthTokens?.let { oAuthTokens ->
               BearerTokens(
                 accessToken = oAuthTokens.accessToken,
                 refreshToken = oAuthTokens.refreshToken,
@@ -105,13 +105,13 @@ internal class GoogleHealthClientImpl(
 
           refreshTokens {
             val refreshTokenResponse = service.newToken(
-              oAuthRefreshToken = clientConfiguration.auth.oAuthTokens!!.refreshToken,
-              clientId = clientConfiguration.auth.clientId,
-              clientSecret = clientConfiguration.auth.clientSecret,
+              oAuthRefreshToken = configuration.auth.oAuthTokens!!.refreshToken,
+              clientId = configuration.auth.clientId,
+              clientSecret = configuration.auth.clientSecret,
             )
             val oAuthTokens = Configuration.Auth.OAuthTokens(
               accessToken = refreshTokenResponse.access_token,
-              refreshToken = clientConfiguration.auth.oAuthTokens!!.refreshToken,
+              refreshToken = configuration.auth.oAuthTokens!!.refreshToken,
             )
             saveOAuthTokens(oAuthTokens)
             BearerTokens(
@@ -123,14 +123,14 @@ internal class GoogleHealthClientImpl(
       }
 
       // Setup logging if requested
-      if (clientConfiguration.http.loggingLevel != Configuration.Http.HttpLoggingLevel.NONE) {
+      if (configuration.http.loggingLevel != Configuration.Http.HttpLoggingLevel.NONE) {
         install(Logging) {
           logger = object : Logger {
             override fun log(message: String) {
               logd(message)
             }
           }
-          level = when (clientConfiguration.http.loggingLevel) {
+          level = when (configuration.http.loggingLevel) {
             Configuration.Http.HttpLoggingLevel.NONE -> LogLevel.NONE
             Configuration.Http.HttpLoggingLevel.INFO -> LogLevel.INFO
             Configuration.Http.HttpLoggingLevel.HEADERS -> LogLevel.HEADERS
@@ -144,11 +144,11 @@ internal class GoogleHealthClientImpl(
 
   private suspend fun saveOAuthTokens(oAuthTokens: Configuration.Auth.OAuthTokens) {
     // Update client configuration with new tokens
-    clientConfiguration = Configuration(
-      http = clientConfiguration.http,
+    configuration = Configuration(
+      http = configuration.http,
       auth = Configuration.Auth(
-        clientId = clientConfiguration.auth.clientId,
-        clientSecret = clientConfiguration.auth.clientSecret,
+        clientId = configuration.auth.clientId,
+        clientSecret = configuration.auth.clientSecret,
         oAuthTokens = oAuthTokens,
       ),
     )
@@ -168,7 +168,7 @@ internal class GoogleHealthClientImpl(
 
       val url = URLBuilder("https://accounts.google.com/o/oauth2/v2/auth").apply {
         parameters.apply {
-          append("client_id", clientConfiguration.auth.clientId)
+          append("client_id", configuration.auth.clientId)
           append("response_type", "code")
           append("scope", scopes.toSet().joinToString(" ") { it.scope })
           append("code_challenge_method", "S256")
@@ -192,8 +192,8 @@ internal class GoogleHealthClientImpl(
       val jsonOAuthTokens = service.createOAuthTokens(
         code = code,
         codeVerifier = oAuthAuthorizationUrlAndCodeVerifier.codeVerifier,
-        clientId = clientConfiguration.auth.clientId,
-        clientSecret = clientConfiguration.auth.clientSecret,
+        clientId = configuration.auth.clientId,
+        clientSecret = configuration.auth.clientSecret,
       )
       saveOAuthTokens(
         oAuthTokens = Configuration.Auth.OAuthTokens(
