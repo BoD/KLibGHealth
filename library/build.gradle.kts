@@ -44,6 +44,13 @@ kotlin {
       }
     }
 
+    jvmTest {
+      dependencies {
+        implementation(kotlin("test"))
+        implementation(libs.konsist)
+      }
+    }
+
     macosArm64Main {
       dependencies {
         // Ktor CIO
