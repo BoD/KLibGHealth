@@ -46,28 +46,35 @@ open class ExerciseType(val exerciseType: String) {
 
   class Unknown(exerciseType: String) : ExerciseType(exerciseType)
 
+
   internal companion object {
-    private val values = setOf(
-      ExerciseTypeUnspecified,
-      Running,
-      Walking,
-      Biking,
-      Swimming,
-      Hiking,
-      Yoga,
-      Pilates,
-      Workout,
-      Hiit,
-      Weightlifting,
-      Spinning,
-      StrengthTraining,
-      Treadmill,
-      TreadmillWalk,
-      Other,
-    )
+    private val values by lazy {
+      setOf(
+        ExerciseTypeUnspecified,
+        Running,
+        Walking,
+        Biking,
+        Swimming,
+        Hiking,
+        Yoga,
+        Pilates,
+        Workout,
+        Hiit,
+        Weightlifting,
+        Spinning,
+        StrengthTraining,
+        Treadmill,
+        TreadmillWalk,
+        Other,
+      )
+    }
 
     fun fromString(exerciseType: String): ExerciseType {
       return values.firstOrNull { it.exerciseType == exerciseType } ?: Unknown(exerciseType)
     }
+  }
+
+  override fun toString(): String {
+    return "ExerciseType(exerciseType='$exerciseType')"
   }
 }
