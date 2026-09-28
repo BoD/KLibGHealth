@@ -1,0 +1,179 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "url": "../../klibghealth/1.1.1-SNAPSHOT/klibghealth-1.1.1-SNAPSHOT.module",
+    "group": "org.jraf.klibghealth",
+    "module": "klibghealth",
+    "version": "1.1.1-SNAPSHOT",
+    "attributes": {
+      "org.gradle.status": "integration"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "9.7.1"
+    }
+  },
+  "variants": [
+    {
+      "name": "jvmApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "klibghealth-jvm-1.1.1-SNAPSHOT.jar",
+          "url": "klibghealth-jvm-1.1.1-SNAPSHOT.jar",
+          "size": 125658,
+          "sha512": "db69ad8c80fc7f92ba4b61c506c9ff7765a57b5618566382db3885e800ba544aa03b28f5ff59f62cb8de90c7fd24d33abdf92db0fb9edd0d2903ac4051a24bdb",
+          "sha256": "10681d76299cae05258ca5aacc8f5069ac06dbfa1d4e24c903c558bfac533832",
+          "sha1": "e7536110357d5853bad9f78fc9152b1c27ae171b",
+          "md5": "d55a265e1684f73370970aba66ff0f41"
+        }
+      ]
+    },
+    {
+      "name": "jvmRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.2.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-coroutines-jdk9",
+          "version": {
+            "requires": "1.11.0"
+          }
+        },
+        {
+          "group": "io.ktor",
+          "module": "ktor-client-okhttp",
+          "version": {
+            "requires": "3.6.0"
+          }
+        },
+        {
+          "group": "io.ktor",
+          "module": "ktor-client-core",
+          "version": {
+            "requires": "3.6.0"
+          }
+        },
+        {
+          "group": "io.ktor",
+          "module": "ktor-client-content-negotiation",
+          "version": {
+            "requires": "3.6.0"
+          }
+        },
+        {
+          "group": "io.ktor",
+          "module": "ktor-client-auth",
+          "version": {
+            "requires": "3.6.0"
+          }
+        },
+        {
+          "group": "io.ktor",
+          "module": "ktor-client-logging",
+          "version": {
+            "requires": "3.6.0"
+          }
+        },
+        {
+          "group": "io.ktor",
+          "module": "ktor-serialization-kotlinx-json",
+          "version": {
+            "requires": "3.6.0"
+          }
+        },
+        {
+          "group": "com.squareup.okio",
+          "module": "okio",
+          "version": {
+            "requires": "3.18.2"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-datetime",
+          "version": {
+            "requires": "0.8.0"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlinx",
+          "module": "kotlinx-serialization-json",
+          "version": {
+            "requires": "1.11.0"
+          }
+        },
+        {
+          "group": "org.jraf.klibnanolog",
+          "module": "klibnanolog",
+          "version": {
+            "requires": "1.2.1"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "klibghealth-jvm-1.1.1-SNAPSHOT.jar",
+          "url": "klibghealth-jvm-1.1.1-SNAPSHOT.jar",
+          "size": 125658,
+          "sha512": "db69ad8c80fc7f92ba4b61c506c9ff7765a57b5618566382db3885e800ba544aa03b28f5ff59f62cb8de90c7fd24d33abdf92db0fb9edd0d2903ac4051a24bdb",
+          "sha256": "10681d76299cae05258ca5aacc8f5069ac06dbfa1d4e24c903c558bfac533832",
+          "sha1": "e7536110357d5853bad9f78fc9152b1c27ae171b",
+          "md5": "d55a265e1684f73370970aba66ff0f41"
+        }
+      ]
+    },
+    {
+      "name": "jvmSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "standard-jvm",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "jvm"
+      },
+      "files": [
+        {
+          "name": "klibghealth-jvm-1.1.1-SNAPSHOT-sources.jar",
+          "url": "klibghealth-jvm-1.1.1-SNAPSHOT-sources.jar",
+          "size": 15500,
+          "sha512": "66712741745d7806e9f72228b579967089d3e3ffd128229b63df2ae899e96c55566f18d5e660a22ad8adb779c0739dbe4c9cd196ed29ad65cf63bccb05efb218",
+          "sha256": "c6bb4b376cf6150d2523087430397fa286311e2a5f11222301a4dbea773db23f",
+          "sha1": "07cb226594180596c4cda6255d37805cbc3f06e8",
+          "md5": "72704e41e105e52e7d7058ed3e34bcf8"
+        }
+      ]
+    }
+  ]
+}

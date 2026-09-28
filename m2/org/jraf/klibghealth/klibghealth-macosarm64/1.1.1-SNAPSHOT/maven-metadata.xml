@@ -3,44 +3,44 @@
   <groupId>org.jraf.klibghealth</groupId>
   <artifactId>klibghealth-macosarm64</artifactId>
   <versioning>
-    <lastUpdated>20260927141001</lastUpdated>
+    <lastUpdated>20260928100653</lastUpdated>
     <snapshot>
-      <timestamp>20260927.141001</timestamp>
+      <timestamp>20260928.100653</timestamp>
       <buildNumber>1</buildNumber>
     </snapshot>
     <snapshotVersions>
       <snapshotVersion>
+        <classifier>metadata</classifier>
+        <extension>jar</extension>
+        <value>1.1.1-20260928.100653-1</value>
+        <updated>20260928100653</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>klib</extension>
+        <value>1.1.1-20260928.100653-1</value>
+        <updated>20260928100653</updated>
+      </snapshotVersion>
+      <snapshotVersion>
         <classifier>sources</classifier>
         <extension>jar</extension>
-        <value>1.1.1-20260927.141001-1</value>
-        <updated>20260927141001</updated>
+        <value>1.1.1-20260928.100653-1</value>
+        <updated>20260928100653</updated>
       </snapshotVersion>
       <snapshotVersion>
         <classifier>javadoc</classifier>
         <extension>jar</extension>
-        <value>1.1.1-20260927.141001-1</value>
-        <updated>20260927141001</updated>
+        <value>1.1.1-20260928.100653-1</value>
+        <updated>20260928100653</updated>
       </snapshotVersion>
       <snapshotVersion>
         <extension>module</extension>
-        <value>1.1.1-20260927.141001-1</value>
-        <updated>20260927141001</updated>
-      </snapshotVersion>
-      <snapshotVersion>
-        <classifier>metadata</classifier>
-        <extension>jar</extension>
-        <value>1.1.1-20260927.141001-1</value>
-        <updated>20260927141001</updated>
+        <value>1.1.1-20260928.100653-1</value>
+        <updated>20260928100653</updated>
       </snapshotVersion>
       <snapshotVersion>
         <extension>pom</extension>
-        <value>1.1.1-20260927.141001-1</value>
-        <updated>20260927141001</updated>
-      </snapshotVersion>
-      <snapshotVersion>
-        <extension>klib</extension>
-        <value>1.1.1-20260927.141001-1</value>
-        <updated>20260927141001</updated>
+        <value>1.1.1-20260928.100653-1</value>
+        <updated>20260928100653</updated>
       </snapshotVersion>
     </snapshotVersions>
   </versioning>
