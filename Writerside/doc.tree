@@ -6,7 +6,7 @@
                  name="klibghealth"
                  start-page="welcome.md">
 
-    <toc-element toc-title="GitHub" href="https://github.com/bod/klibghealth"/>
-    <toc-element toc-title="Kdoc" href="https://bod.github.io/klibghealth/kdoc"/>
+    <toc-element toc-title="GitHub" href="https://github.com/bod/KLibGHealth"/>
+    <toc-element toc-title="Kdoc" href="https://bod.github.io/KLibGHealth/kdoc"/>
     <toc-element topic="welcome.md"/>
 </instance-profile>
